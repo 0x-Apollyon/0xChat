@@ -1,5 +1,5 @@
 print("0xChat CLI Mode Server")
-print("v1.2")
+print("v2.1")
 print("Made by 0xAppoloyon")
 print("twitter.com/0xAppoloyon\n")
 
