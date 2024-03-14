@@ -54,7 +54,6 @@ client_list = []
 def broadcast_all(data):
     global client_list
     for client in client_list:
-        print(f"sending {data}")
         client.sendall(data.encode())
 
 def handle_client(conn , caddr):
