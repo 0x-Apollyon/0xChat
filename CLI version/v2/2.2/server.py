@@ -129,19 +129,14 @@ else:
 
 server_info_msg = f"--SERVER-INFO--|SECUREMODE:{sc_mode}"
 
+
 while True:
-    if not sym_encryption:
-        conn, caddr = sock.accept()
-        print(f"New client connection: {caddr}")
-        conn.sendall(server_info_msg.encode())
-        client_list.append(conn)
-        threading.Thread(target=handle_client, args=(conn , caddr,)).start()
-    else:
-        conn, caddr = sock.accept()
-        print(f"New client connection: {caddr}")
-        conn.sendall(server_info_msg.encode())
-        client_list.append(conn)
-        threading.Thread(target=handle_client, args=(conn , caddr,)).start()
+    conn, caddr = sock.accept()
+    print(f"New client connection: {caddr}")
+    conn.sendall(server_info_msg.encode())
+    client_list.append(conn)
+    threading.Thread(target=handle_client, args=(conn , caddr,)).start()
+
 
 
     
